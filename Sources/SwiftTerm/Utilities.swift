@@ -6,6 +6,18 @@
 //  Copyright © 2020 Miguel de Icaza. All rights reserved.
 //
 
+#if DEBUG
+struct SyncDebug {
+  static func log(_ text: String) {
+      print("[Sync] \(text)")
+  }
+}
+#else
+struct SyncDebug {
+  static func log(_ text: String) {}
+}
+#endif
+
 import Foundation
 
 struct UnicodeUtil {
